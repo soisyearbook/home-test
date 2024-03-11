@@ -506,40 +506,25 @@ button {
 /** team section **/
 
 .team {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: space-around;  /* Adjust spacing as needed */
-     width: fit-content;  /* Adjust width as needed */
-     background: #fff;
-     padding-top: 90px;
+     display: flex;  /* Arrange team members in a row */
    }
    
-   .container {
-     height: 100vh;
-   }
-   
-   .row {
-     height: 100%;
-   }
-   
-   .col-md-6,
    .team-member {
-     height: 100%;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+     flex: 1;  /* Make team members evenly sized */
+     text-align: center;
+     margin: 5px;  /* Adjust spacing as needed */
    }
    
    .team-member img {
-     width: 150px;  /* Adjust image size as needed */
-     height: 150px;  /* Adjust image size as needed */
+     width: 100px;  /* Adjust image size as needed */
+     height: 100px;  /* Adjust image size as needed */
      border-radius: 50%;  /* For circular images */
    }
    
    .team-member h3 {
      margin-top: 5px;  /* Adjust spacing as needed */
    }
+   
 
 /** end team section **/
 
