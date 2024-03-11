@@ -503,6 +503,34 @@ button {
 
 /** end work section **/
 
+/** team section **/
+
+.team {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;  /* Adjust spacing as needed */
+     width: fit-content;  /* Adjust width as needed */
+     background: #fff;
+     padding-top: 90px;
+   }
+   
+   .team-member {
+     text-align: center;
+     margin: 10px;  /* Adjust spacing as needed */
+   }
+   
+   .team-member img {
+     width: 150px;  /* Adjust image size as needed */
+     height: 150px;  /* Adjust image size as needed */
+     border-radius: 50%;  /* For circular images */
+   }
+   
+   .team-member h3 {
+     margin-top: 5px;  /* Adjust spacing as needed */
+   }
+
+/** end team section **/
+
 
 /** footer **/
 
