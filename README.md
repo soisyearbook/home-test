@@ -1,1 +1,1 @@
-# home
+# SOIS Yearbook Site

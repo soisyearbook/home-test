@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Viewer</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
 
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Coming Soon...</title>
+    #pdf-viewer {
+        width: 100%;
+        height: 100%;
+    }
 
+    #fallback-message {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
 
+    @media screen and (max-width: 600px) {
+        #pdf-viewer {
+            display: none;
+        }
+        #fallback-message {
+            display: block;
+        }
+    }
+</style>
 </head>
-
 <body>
-  <!-- Main Container -->
-  <main>
-    <!-- Header Logo -->
-    <div class="header-logo"></div>
-    <!-- Title Section -->
-    <article class="title-section">
-      <h1>Coming <span class="soon">soon!</span></h1>
-    </article>
-
-    <article>
-
-      <!-- Statistics IMG-->
-      <div class="statistics-img"></div>
-    </article>
-  </main>
-
+    <embed id="pdf-viewer" src="https://files.wingarr.eu.org/yearbook/17SH0674_SOIS-YEARBOOK.pdf" type="application/pdf">
+    <iframe id="fallback-message" src="pdf_fallback_message.html"></iframe>
 </body>
-
 </html>
