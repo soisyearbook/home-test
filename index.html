@@ -1,516 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<div class="moon"></div>
-<div class="moon__crater moon__crater1"></div>
-<div class="moon__crater moon__crater2"></div>
-<div class="moon__crater moon__crater3"></div>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<div class="star star1"></div>
-<div class="star star2"></div>
-<div class="star star3"></div>
-<div class="star star4"></div>
-<div class="star star5"></div>
+  <title>Silveroaks Yearbook - Mighty Oaks</title>
+  <meta content="For the first time in forever! ♾️" name="description">
 
-<div class="error">
-  <div class="error__title">Under Maintenance</div>
-  <div class="error__subtitle">We will be back soon...</div>
-</div>
+  <!-- Favicons -->
+  <link href="./assets/img/logo.png" rel="icon">
+  <link href="./assets/img/about.png" rel="apple-touch-icon">
 
-<div class="astronaut">
-  <div class="astronaut__backpack"></div>
-  <div class="astronaut__body"></div>
-  <div class="astronaut__body__chest"></div>
-  <div class="astronaut__arm-left1"></div>
-  <div class="astronaut__arm-left2"></div>
-  <div class="astronaut__arm-right1"></div>
-  <div class="astronaut__arm-right2"></div>
-  <div class="astronaut__arm-thumb-left"></div>
-  <div class="astronaut__arm-thumb-right"></div>
-  <div class="astronaut__leg-left"></div>
-  <div class="astronaut__leg-right"></div>
-  <div class="astronaut__foot-left"></div>
-  <div class="astronaut__foot-right"></div>
-  <div class="astronaut__wrist-left"></div>
-  <div class="astronaut__wrist-right"></div>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   
-  <div class="astronaut__cord">
-    <canvas id="cord" height="500px" width="500px"></canvas>
-  </div>
+  <!-- Icons -->
   
-  <div class="astronaut__head">
-    <canvas id="visor" width="60px" height="60px"></canvas>
-    <div class="astronaut__head-visor-flare1"></div>
-    <div class="astronaut__head-visor-flare2"></div>
-  </div>
-</div>
-<title>Under Maintenance</title>
-<style>
+  <!-- Vendor CSS Files -->
+  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
-  html,
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    background: linear-gradient(90deg, #2f3640 23%, #181b20 100%);
-}
-
-.moon {
-    background: linear-gradient(90deg, #d0d0d0 48%, #919191 100%);
-    position: absolute;
-    top: -100px;
-    left: -300px;
-    width: 900px;
-    height: 900px;
-    content: '';
-    border-radius: 100%;
-    box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.5);
-}
-
-.moon__crater {
-    position: absolute;
-    content: '';
-    border-radius: 100%;
-    background: linear-gradient(90deg, #7a7a7a 38%, #c3c3c3 100%);
-    opacity: 0.6;
-}
-
-.moon__crater1 {
-    top: 250px;
-    left: 500px;
-    width: 60px;
-    height: 180px;
-}
-
-.moon__crater2 {
-    top: 650px;
-    left: 340px;
-    width: 40px;
-    height: 80px;
-    transform: rotate(55deg);
-}
-
-.moon__crater3 {
-    top: -20px;
-    left: 40px;
-    width: 65px;
-    height: 120px;
-    transform: rotate(250deg);
-}
-
-.star {
-    background: grey;
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    content: '';
-    border-radius: 100%;
-    transform: rotate(250deg);
-    opacity: 0.4;
-    animation-name: shimmer;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes shimmer {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.7;
-    }
-}
-
-.star1 {
-    top: 40%;
-    left: 50%;
-    animation-delay: 1s;
-}
-
-.star2 {
-    top: 60%;
-    left: 90%;
-    animation-delay: 3s;
-}
-
-.star3 {
-    top: 10%;
-    left: 70%;
-    animation-delay: 2s;
-}
-
-.star4 {
-    top: 90%;
-    left: 40%;
-}
-
-.star5 {
-    top: 20%;
-    left: 30%;
-    animation-delay: 0.5s;
-}
-
-.error {
-    position: absolute;
-    left: 100px;
-    top: 400px;
-    transform: translateY(-60%);
-    font-family: 'Righteous', cursive;
-    color: #363e49;
-}
-
-.error__title {
-    font-size: 10em;
-}
-
-.error__subtitle {
-    font-size: 2em;
-}
-
-.error__description {
-    opacity: 0.5;
-}
-
-.error__button {
-    min-width: 7em;
-    margin-top: 3em;
-    margin-right: 0.5em;
-    padding: 0.5em 2em;
-    outline: none;
-    border: 2px solid #2f3640;
-    background-color: transparent;
-    border-radius: 8em;
-    color: #576375;
-    cursor: pointer;
-    transition-duration: 0.2s;
-    font-size: 0.75em;
-    font-family: 'Righteous', cursive;
-}
-
-.error__button:hover {
-    color: #21252c;
-}
-
-.error__button--active {
-    background-color: #e67e22;
-    border: 2px solid #e67e22;
-    color: white;
-}
-
-.error__button--active:hover {
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
-.astronaut {
-    position: absolute;
-    width: 185px;
-    height: 300px;
-    left: 70%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(20deg) scale(1.2);
-}
-
-.astronaut__head {
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    left: 60px;
-    width: 60px;
-    height: 60px;
-    content: '';
-    border-radius: 2em;
-}
-
-.astronaut__head-visor-flare1 {
-    background-color: #7f8fa6;
-    position: absolute;
-    top: 28px;
-    left: 40px;
-    width: 10px;
-    height: 10px;
-    content: '';
-    border-radius: 2em;
-    opacity: 0.5;
-}
-
-.astronaut__head-visor-flare2 {
-    background-color: #718093;
-    position: absolute;
-    top: 40px;
-    left: 38px;
-    width: 5px;
-    height: 5px;
-    content: '';
-    border-radius: 2em;
-    opacity: 0.3;
-}
-
-.astronaut__backpack {
-    background-color: #bfbfbf;
-    position: absolute;
-    top: 90px;
-    left: 47px;
-    width: 86px;
-    height: 90px;
-    content: '';
-    border-radius: 8px;
-}
-
-.astronaut__body {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 115px;
-    left: 55px;
-    width: 70px;
-    height: 80px;
-    content: '';
-    border-radius: 8px;
-}
-
-.astronaut__body__chest {
-    background-color: #d9d9d9;
-    position: absolute;
-    top: 140px;
-    left: 68px;
-    width: 45px;
-    height: 25px;
-    content: '';
-    border-radius: 6px;
-}
-
-.astronaut__arm-left1 {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 127px;
-    left: 9px;
-    width: 65px;
-    height: 20px;
-    content: '';
-    border-radius: 8px;
-    transform: rotate(-30deg);
-}
-
-.astronaut__arm-left2 {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 102px;
-    left: 7px;
-    width: 20px;
-    height: 45px;
-    content: '';
-    border-radius: 8px;
-    transform: rotate(-12deg);
-    border-top-left-radius: 8em;
-    border-top-right-radius: 8em;
-}
-
-.astronaut__arm-right1 {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 113px;
-    left: 100px;
-    width: 65px;
-    height: 20px;
-    content: '';
-    border-radius: 8px;
-    transform: rotate(-10deg);
-}
-
-.astronaut__arm-right2 {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 78px;
-    left: 141px;
-    width: 20px;
-    height: 45px;
-    content: '';
-    border-radius: 8px;
-    transform: rotate(-10deg);
-    border-top-left-radius: 8em;
-    border-top-right-radius: 8em;
-}
-
-.astronaut__arm-thumb-left {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 110px;
-    left: 21px;
-    width: 10px;
-    height: 6px;
-    content: '';
-    border-radius: 8em;
-    transform: rotate(-35deg);
-}
-
-.astronaut__arm-thumb-right {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 90px;
-    left: 133px;
-    width: 10px;
-    height: 6px;
-    content: '';
-    border-radius: 8em;
-    transform: rotate(20deg);
-}
-
-.astronaut__wrist-left {
-    background-color: #e67e22;
-    position: absolute;
-    top: 122px;
-    left: 6.5px;
-    width: 21px;
-    height: 4px;
-    content: '';
-    border-radius: 8em;
-    transform: rotate(-15deg);
-}
-
-.astronaut__wrist-right {
-    background-color: #e67e22;
-    position: absolute;
-    top: 98px;
-    left: 141px;
-    width: 21px;
-    height: 4px;
-    content: '';
-    border-radius: 8em;
-    transform: rotate(-10deg);
-}
-
-.astronaut__leg-left {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 188px;
-    left: 50px;
-    width: 23px;
-    height: 75px;
-    content: '';
-    transform: rotate(10deg);
-}
-
-.astronaut__leg-right {
-    background-color: #e6e6e6;
-    position: absolute;
-    top: 188px;
-    left: 108px;
-    width: 23px;
-    height: 75px;
-    content: '';
-    transform: rotate(-10deg);
-}
-
-.astronaut__foot-left {
-    background-color: white;
-    position: absolute;
-    top: 240px;
-    left: 43px;
-    width: 28px;
-    height: 20px;
-    content: '';
-    transform: rotate(10deg);
-    border-radius: 3px;
-    border-top-left-radius: 8em;
-    border-top-right-radius: 8em;
-    border-bottom: 4px solid #e67e22;
-}
-
-.astronaut__foot-right {
-    background-color: white;
-    position: absolute;
-    top: 240px;
-    left: 111px;
-    width: 28px;
-    height: 20px;
-    content: '';
-    transform: rotate(-10deg);
-    border-radius: 3px;
-    border-top-left-radius: 8em;
-    border-top-right-radius: 8em;
-    border-bottom: 4px solid #e67e22;
-}
-
-</style>
+  <!-- Template Main CSS File -->
+  <link href="./assets/css/style.css" rel="stylesheet">
 </head>
-<script>
-  function drawVisor() {
-  const canvas = document.getElementById('visor');
-  const ctx = canvas.getContext('2d');
-  
-  ctx.beginPath();
-  ctx.moveTo(5, 45);
-  ctx.bezierCurveTo(15, 64, 45, 64, 55, 45);
-  
-  ctx.lineTo(55, 20);
-  ctx.bezierCurveTo(55, 15, 50, 10, 45, 10);
-  
-  ctx.lineTo(15, 10);
-  
-  ctx.bezierCurveTo(15, 10, 5, 10, 5, 20);
-  ctx.lineTo(5, 45);
-  
-  ctx.fillStyle = '#2f3640';
-  ctx.strokeStyle = '#f5f6fa';
-  ctx.fill();
-  ctx.stroke();
-}
 
-const cordCanvas = document.getElementById('cord');
-const ctx = cordCanvas.getContext('2d');
+<body>
 
-let y1 = 160;
-let y2 = 100;
-let y3 = 100;
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
 
-let y1Forward = true;
-let y2Forward = false;
-let y3Forward = true;
+      <div class="logo">
+        <h1><a href="index.html"><span><img src="./assets/img/logo.png" style="height: 35px;margin-top:-1%;" > Silveroaks Yearbook</span></a></h1>
+      </div>
 
-function animate() {
-  requestAnimationFrame(animate);
-  ctx.clearRect(0, 0, innerWidth, innerHeight);
-  
-  ctx.beginPath();
-  ctx.moveTo(130, 170);
-  ctx.bezierCurveTo(250, y1, 345, y2, 400, y3);
-  
-  ctx.strokeStyle = 'white';
-  ctx.lineWidth = 8;
-  ctx.stroke();
- 
-  
-  if (y1 === 100) {
-    y1Forward = true;
-  }
-  
-  if (y1 === 300) {
-    y1Forward = false;
-  }
-  
-  if (y2 === 100) {
-    y2Forward = true;
-  }
-  
-  if (y2 === 310) {
-    y2Forward = false;
-  }
-  
-  if (y3 === 100) {
-    y3Forward = true;
-  }
-  
-  if (y3 === 317) {
-    y3Forward = false;
-  }
-  
-  y1Forward ? y1 += 1 : y1 -= 1;
-  y2Forward ? y2 += 1 : y2 -= 1;
-  y3Forward ? y3 += 1 : y3 -= 1;
-}
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a><span>Nagivation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="index.html#footer">Footer</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto highlight2" href="./login/index.html">Login</a></li>
+          <li><a class="nav-link scrollto highlight" href="./yearbook.html">View Yearbook</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
-drawVisor();
-animate();
-</script>  
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1><span>Silveroaks</span> Yearbook</h1>
+              <h2>For the first time in forever! ♾️
+                   A 10th Graders Exclusive!</h2>
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto">Get Started</a>
+              
+              <button type="red" onclick="window.open('./yearbook.html', '_blank')"><i class="bi bi-book-fill"></i> View Yearbook</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="./assets/img/heroimg.png" class="img-fluid animated" alt="" style="width: 100%">
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" 
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(45,56,53, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(45,56,53, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#23272A">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Yearbook Committee</h2>
+          <p><i class="bx bx-support"></i> Our Great Team</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="./assets/img/team/team-1.png" class="img-fluid" alt="" style="width: 100%"></div>
+              <div class="member-info">
+                <h4>Y Sahasra</h4>
+                <span>Managing Team</span>
+                <div class="social">
+                  <a href="https://instagram.com/ysahasra._.28"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="./assets/img/team/team-2.png" class="img-fluid" alt="" style="width: 100%"></div>
+              <div class="member-info">
+                <h4>K Sahasra</h4>
+                <span>Managing Team</span>
+                <div class="social">
+                  <a href="https://instagram.com/s_h_sr_k"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="./assets/img/team/team-3.png" class="img-fluid" alt="" style="width: 100%"></div>
+              <div class="member-info">
+                <h4>D Haritha</h4>
+                <span>Managing Team</span>
+                <div class="social">
+                  <a href="https://instagram.com/crrshd.09"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="./assets/img/team/team-4.png" class="img-fluid" alt="" style="width: 100%"></div>
+              <div class="member-info">
+                <h4>S Dheeraj</h4>
+                <span>Editor & Website Coder/Owner</span>
+                <div class="social">
+                  <a href="https://www.instagram.com/sdheeraj29"><i class="bi bi-instagram"></i></a>
+                  <a href="mailto:sdheeraj@wingarr.eu.org"><i class="bi bi-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="./assets/img/team/team-5.png" class="img-fluid" alt="" style="width: 100%"></div>
+              <div class="member-info">
+                <h4>G Vaibhav</h4>
+                <span>Editor</span>
+                <div class="social">
+                  <a href="https://instagram.com/coastleopard8"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End Team Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3><img src="./assets/img/logo.png" style="height: 25px;" > Silveroaks Yearbook</h3>
+              <p class="pb-3"><em>For the batch of<br>2023-24 Students</em><br>Mighty Oaks Branch</p>
+              <p>
+                <button type="red" onclick="window.open('https://instagram.com/soisyearbook', '_blank')"><i class="bi bi-instagram"></i> Instagram</button>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#team">Yearbook Committee</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="./yearbook.html#">View Yearbook</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://instagram.com/soisyearbook/">Instagram</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/people/Silver-Oaks-Y/61555970140691">Facebook</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="mailto:silveroaksyearbook.10@gmail.com">Contact us!</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Yearbook Committee</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Modified by Yearbook Committee, Designed by <a style="color: #ff4756"target="_blank" href="https://mathiscool.is-a.dev">MathisCool</a>, Base by <a style="color: #ff4756" target="_blank" href="https://bootstrapmade.com/">Bootstrap</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/purecounter/purecounter.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>
