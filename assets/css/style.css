@@ -742,188 +742,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
---------------------------------------------------------------*/
-.about {
-  padding: 40px 0 0 0;
-}
-
-.about .icon-boxes h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #5663F7;
-  margin-bottom: 3px;
-}
-
-.about .icon-box {
-  margin-top: 6px;
-}
-
-.about .icon-box .icon {
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border: 2px solid #2a36b6;
-  border-radius: 50px;
-  transition: 0.5s;
-}
-
-.about .icon-box .icon i {
-  color: #5663F7;
-  font-size: 32px;
-}
-
-.about .icon-box:hover .icon {
-  background: #5663F7;
-  border-color: #2a36b6;
-}
-
-.about .icon-box:hover .icon i {
-  color: #fff;
-}
-
-.about .icon-box .title {
-  margin-left: 85px;
-  font-weight: 700;
-  margin-bottom: 3px;
-  font-size: 18px;
-}
-
-.about .icon-box .title a {
-  color: #c1c1c1;
-  transition: 0.3s;
-}
-
-.about .icon-box .title a:hover {
-  color: #5663F7;
-}
-
-.about .icon-box .description {
-  margin-left: 85px;
-  font-style: italic;
-  line-height: 24px;
-  font-size: 14px;
-}
-
-.about .video-box {
-  background: url("../img/about.png") center center no-repeat;
-  background-size: contain;
-  min-height: 300px;
-}
-
-.about .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(#3f43fd 50%, rgba(63, 67, 253, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-  overflow: hidden;
-}
-
-.about .play-btn::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  -webkit-transform : translateX(-40%) translateY(-50%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform     : translateX(-40%) translateY(-50%); /* IE 9 */
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.about .play-btn::before {
-  content: '';
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation: pulsate-btn 2s;
-  animation: pulsate-btn 2s;
-  -webkit-animation-direction: forwards;
-  animation-direction: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: steps;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(63, 67, 253, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-.about .play-btn:hover::after {
-  border-left: 15px solid #3f43fd;
-  transform: scale(20);
-  -webkit-transform : scale(20); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform     : scale(20); /* IE 9 */
-}
-
-.about .play-btn:hover::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  -webkit-transform : translateX(-40%) translateY(-50%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform     : translateX(-40%) translateY(-50%); /* IE 9 */
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  -webkit-animation: none;
-  animation: none;
-  border-radius: 0;
-}
-
-@-webkit-keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    -webkit-transform : scale(0.6, 0.6); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform     : scale(0.6, 0.6);/* IE 9 */
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1, 1);
-    -webkit-transform : scale(1, 1); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform     : scale(1, 1);/* IE 9 */
-    opacity: 0;
-  }
-}
-
-@keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    -webkit-transform : scale(0.6, 0.6); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform     : scale(0.6, 0.6);/* IE 9 */
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1, 1);
-    -webkit-transform : scale(1, 1); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform     : scale(1, 1);/* IE 9 */
-    opacity: 0;
-  }
-}
-
-/*--------------------------------------------------------------
 # Details
 --------------------------------------------------------------*/
 .details .content + .content {
@@ -1039,6 +857,181 @@ section {
   font-size: 16px;
   margin: 0 2px;
 }
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info {
+  width: 100%;
+  background: #23272A;
+}
+
+.contact .info i {
+  font-size: 20px;
+  color: #3f43fd;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #33393d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #5663F7;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #2a2dc5;
+}
+
+.contact .info .email, .contact .info .phone {
+  margin-top: 40px;
+}
+
+.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+  background: #5663F7;
+  color: #fff;
+}
+
+.contact .php-email-form {
+  width: 100%;
+  background: #23272A;
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #57F287;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #57F287;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #23272A;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #373ad4;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input, .contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: #5663F7;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: #34e5a6;
+}
+button[type="green"] {
+  background: #5663F7;
+  border: 0;
+  padding: 10px 30px;
+  color: rgb(241, 238, 238);
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+button[type="green"]:hover {
+  background: #34e5a6;
+}
+button[type="red"] {
+  background: #f77c56 ;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+button[type="red"]:hover {
+  background: #ff511c;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform : rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform     : rotate(0deg);/* IE 9 */
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform : rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform     : rotate(360deg);/* IE 9 */
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform : rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform     : rotate(0deg);/* IE 9 */
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform : rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform     : rotate(360deg);/* IE 9 */
+  }
+}
+
 
 
 /*--------------------------------------------------------------
