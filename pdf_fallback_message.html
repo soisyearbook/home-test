@@ -51,7 +51,19 @@
     <button class="button" onclick="window.open('https://1drv.ms/b/s!AthMJ0_iscvjk0dndACyIbvq04F0?e=B64nAa', '_blank')">OneDrive Link</button>
     <button class="button" onclick="window.open('https://soisyearbook.is-cool.dev/pdf/17SH0674_SOIS-YEARBOOK.pdf', '_blank')">Alternative Link</button>
     <button class="button" onclick="window.open('https://app.box.com/s/qlzyhceiqv435n4gxverk9tpsjik4g81', '_blank')">Alternative Link 2</button>
-    <button class="button" onclick="window.location.href='pdf/17SH0674_SOIS-YEARBOOK.pdf'" download="pdf/17SH0674_SOIS-YEARBOOK.pdf">Download PDF</button>
+    <button class="button" onclick="downloadPDF()">Download PDF</button>
     <p>If nothing is working and you need help <a href="https://instagram.com/sdheeraj29">contact us here</a> or <a href="https://instagram.com/soisyearbook"> here</a>.</p>
+
+    <script>
+        function downloadPDF() {
+            var link = document.createElement('a');
+            link.href = 'pdf/17SH0674_SOIS-YEARBOOK.pdf';
+            link.download = '17SH0674_SOIS-YEARBOOK.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+    
 </body>
 </html>
