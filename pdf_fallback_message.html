@@ -27,11 +27,30 @@
         color: #007bff;
         text-decoration: none;
     }
+    
+    /* Button styles */
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+    }
 </style>
 </head>
 <body>
     <h1>PDF Viewer Not Supported</h1>
-    <p>We're sorry, but your device doesn't support the PDF viewer used on this page.</p>
-    <p>Please try viewing the PDF on a different device or <a href="https://instagram.com/sdheeraj29">contact us</a> if this issue persists.</p>
+    <p>You can also try the alternative buttons below:</p>  
+    <!-- Buttons -->
+    <button class="button" onclick="window.location.href='https://drive.google.com/file/d/11AeZ3ZHyFCypZVMfVCeu8dzT8taLcBqx/view'">Drive Link</button>
+    <button class="button" onclick="window.location.href='https://soisyearbook.is-cool.dev/pdf/17SH0674_SOIS-YEARBOOK.pdf'">Alternative Link</button>
+    <button class="button" onclick="window.location.href='https://files.wingarr.eu.org/yearbook/17SH0674_SOIS-YEARBOOK.pdf'">Alternative Link 2</button>
+    <li><a href="pdf/17SH0674_SOIS-YEARBOOK.pdf" class="button" download="pdf/17SH0674_SOIS-YEARBOOK.pdf">Download PDF</a></li>
+    <p>If nothing is working and you need help <a href="https://instagram.com/sdheeraj29">contact us here</a> or <a href="https://instagram.com/soisyearbook"> here</a>.</p>
 </body>
 </html>
