@@ -1006,6 +1006,20 @@ button[type="red"]:hover {
   background: #ff511c;
 }
 
+}
+button[type="blue"] {
+  background: #4287f5 ;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+button[type="blue"]:hover {
+  background: #0056b3;
+}
+
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
