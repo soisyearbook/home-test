@@ -995,20 +995,6 @@ button[type="green"]:hover {
 }
 
 button[type="red"] {
-  background: #f77c56 ;
-  border: 0;
-  padding: 10px 30px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-button[type="red"]:hover {
-  background: #ff511c;
-}
-
-}
-button[type="blue"] {
   background: #4287f5 ;
   border: 0;
   padding: 10px 30px;
@@ -1017,7 +1003,7 @@ button[type="blue"] {
   border-radius: 50px;
 }
 
-button[type="blue"]:hover {
+button[type="red"]:hover {
   background: #0056b3;
 }
 
