@@ -993,6 +993,7 @@ button[type="green"] {
 button[type="green"]:hover {
   background: #34e5a6;
 }
+
 button[type="red"] {
   background: #f77c56 ;
   border: 0;
