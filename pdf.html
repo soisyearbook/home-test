@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NRR0EQRBY5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NRR0EQRBY5');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Fallback Message</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    /* Button styles */
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+    <p>You can use the buttons below to view the pdf:</p>  
+    <button class="button" onclick="window.open('https://drive.google.com/file/d/1p3KdkSJLLT7jdrYw9CEfRmC4RqQH0e9h/view', '_blank')">Drive Link</button>
+    <button class="button" onclick="window.open('https://1drv.ms/b/s!Ai49Coz47bGjgV5NAcbWiX5-hbRk?e=ajj9ml', '_blank')">OneDrive Link</button>
+    <button class="button" onclick="window.open('https://www.dropbox.com/scl/fi/enwxickp05v0bb1w0uou0/10th_Yearbook_23-24.pdf?rlkey=c7atceylm0vws3ky6ythzvyu1', '_blank')">Dropbox Link</button>
+    <button class="button" onclick="window.open('https://acrobat.adobe.com/id/urn:aaid:sc:AP:320a681c-40ff-4aea-9044-ad78b3b57e7e', '_blank')">Adobe Acrobat Link</button>
+    <button class="button" onclick="window.open('https://files.wingarr.eu.org/yearbook/10th_Yearbook_23-24.pdf', '_blank')">Alternative Link</button>
+    <button class="button" onclick="downloadPDF()">Download PDF</button>
+    <p>If nothing is working and you need help <a href="https://instagram.com/sdheeraj29">contact us here</a> or <a href="https://instagram.com/soisyearbook"> here</a>.</p>
+
+    <script>
+        function downloadPDF() {
+            var link = document.createElement('a');
+            link.href = 'pdf/10th_Yearbook_23-24.pdf';
+            link.download = '10th_Yearbook_23-24.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>
