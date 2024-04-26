@@ -995,7 +995,7 @@ button[type="green"]:hover {
 }
 
 button[type="red"] {
-  background: #4287f5 ;
+  background: #f77c56 ;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1004,7 +1004,7 @@ button[type="red"] {
 }
 
 button[type="red"]:hover {
-  background: #0056b3;
+  background: #ff511c;
 }
 
 @-webkit-keyframes animate-loading {
