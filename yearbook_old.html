@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NRR0EQRBY5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NRR0EQRBY5');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yearbook PDF</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #pdf-viewer {
+        width: 100%;
+        height: 100%;
+    }
+
+    #fallback-message {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+        #pdf-viewer {
+            display: none;
+        }
+        #fallback-message {
+            display: block;
+        }
+    }
+</style>
+</head>
+<body>
+    <embed id="pdf-viewer" src="https://files.wingarr.eu.org/yearbook/10th_Yearbook_23-24.pdf" type="application/pdf">
+    <iframe id="fallback-message" src="pdf_fallback_message.html"></iframe>
+</body>
+</html>
